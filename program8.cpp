@@ -93,12 +93,27 @@ public:
 
         return;
     }
+
+    void resize(int n)
+    {
+        if (get_size() > n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                cout << "The new array: " << return_element(i) << endl;
+            }
+        }
+        delete (get_array());
+    }
 };
 
 int main()
 {
     Array *test = nullptr;
     Array *test2 = nullptr;
+    test = new Array();
+
+    test->resize(99);
 
     if (test == nullptr)
     {
