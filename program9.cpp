@@ -96,11 +96,14 @@ public:
 
     void resize(int n)
     {
+        int new_array[n] = {};
+
         if (get_size() > n)
         {
             for (int i = 0; i < n; i++)
             {
-                cout << "The new array: " << return_element(i) << endl;
+                new_array[i] = return_element(i);
+                cout << "The new array [" << i << "]: " << new_array[i] << endl;
             }
         }
         delete (get_array());
@@ -111,9 +114,11 @@ int main()
 {
     Array *test = nullptr;
     Array *test2 = nullptr;
-    test = new Array();
+    Array *new_array = nullptr;
 
-    test->resize(99);
+    new_array = new Array();
+
+    new_array->resize(10);
 
     if (test == nullptr)
     {
@@ -130,6 +135,7 @@ int main()
         cout << "test2[100] is " << test2->return_element(100) << endl;
     }
 
+    delete (new_array);
     delete (test);
     delete (test2);
 
